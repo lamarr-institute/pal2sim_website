@@ -1,13 +1,13 @@
 self.__BUILD_MANIFEST = {
   "/_error": [
-    "./static/chunks/9bcf7f6c945b902a.js"
+    "./static/chunks/396fc161fdb6ca76.js"
   ],
   "__rewrites": {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/mein-forschungsprojekt//_next/:path+",
-        "destination": "/mein-forschungsprojekt/_next/:path+"
+        "source": "/pal2sim_website//_next/:path+",
+        "destination": "/pal2sim_website/_next/:path+"
       }
     ],
     "fallback": []
