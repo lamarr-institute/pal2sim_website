@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pal2Sim - Palette to Simulation",
-  description: "A scientific research project transforming color palettes into simulation environments",
+  title: "Pal2Rec - Pallet Activity Recognition",
+  description: "A scientific research project for sensor-based activity recognition of pallets in international supply chains",
+  icons: {
+    icon: "/pal2sim_bild.svg",
+  },
 };
 
 export default function RootLayout({
