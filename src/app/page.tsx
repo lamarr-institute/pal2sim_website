@@ -108,53 +108,100 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
               Research Datasets
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 text-center mb-8">
+            <p className="text-gray-700 dark:text-gray-300 text-center mb-12">
               Access our comprehensive benchmark datasets used in the Pal2Rec research project
             </p>
             
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    SPARL Dataset
-                  </h3>
-                  <p className="text-lg text-green-600 dark:text-green-400 font-medium">
-                    Sensor-based Pallet Activity Recognition in Logistics
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                      SPARL is a freely accessible data set for sensor-based activity recognition of pallets in logistics. 
-                      The data set consists of <strong>16 recordings</strong> using three different sensors simultaneously:
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-1">
-                      <li>MBIENTLAB MetaMotionS</li>
-                      <li>MSR Electronics MSR 145</li>
-                      <li>Kistler KiDaQ Module 5512A</li>
-                    </ul>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      The recordings include camera footage with frame-by-frame annotations, captured at different execution speeds 
-                      to represent various logistics scenarios.
-                    </p>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-3 gap-8">
+                {/* SPARL1 Dataset */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                  <div className="text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      SPARL1 Dataset
+                    </h3>
                   </div>
                   
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  </p>
+                  
                   <div className="text-center">
-                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-                      Dataset Size: 250MB
-                    </div>
                     <a 
                       href="https://zenodo.org/records/11280959" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg w-full justify-center"
                     >
-                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                       Download on Zenodo
                     </a>
+                  </div>
+                </div>
+
+                {/* SPARL2 Dataset */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                  <div className="text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      SPARL2 Dataset
+                    </h3>
+                  </div>
+                  
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  </p>
+                  
+                  <div className="text-center">
+                    <a 
+                      href="https://zenodo.org/records/13318882" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg w-full justify-center"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                      Download on Zenodo
+                    </a>
+                  </div>
+                </div>
+
+                {/* SPARL3 Dataset */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                  <div className="text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      SPARL3 Dataset
+                    </h3>
+                  </div>
+                  
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  </p>
+                  
+                  <div className="text-center">
+                    <div className="inline-flex items-center bg-gray-400 text-white px-6 py-3 rounded-lg font-medium shadow-md cursor-not-allowed w-full justify-center">
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                      </svg>
+                      Coming Soon
+                    </div>
                   </div>
                 </div>
               </div>
