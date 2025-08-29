@@ -5,12 +5,12 @@ export default function Home() {
         <header className="text-center mb-16">
           <div className="flex items-center justify-center gap-6 mb-6">
             <img 
-              src="./pal2sim_logo.svg" 
+              src="/pal2sim_website/pal2sim_logo.svg" 
               alt="Pal2Rec Logo" 
               className="h-16 w-auto"
             />
             <img 
-              src="./lamarr_logo.png" 
+              src="/pal2sim_website/lamarr_logo.png" 
               alt="Lamarr Institute Logo" 
               className="h-16 w-auto"
             />
@@ -70,7 +70,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
                   <div className="relative">
                     <img 
-                      src="./image_reality.png" 
+                      src="/pal2sim_website/image_reality.png" 
                       alt="Real pallet sensor data" 
                       className="w-full h-48 object-cover rounded-lg mb-3"
                     />
@@ -86,7 +86,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
                   <div className="relative">
                     <img 
-                      src="./image_simulation.png" 
+                      src="/pal2sim_website/image_simulation.png" 
                       alt="Simulated pallet environment" 
                       className="w-full h-48 object-cover rounded-lg mb-3"
                     />
