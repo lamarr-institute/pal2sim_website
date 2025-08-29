@@ -37,7 +37,7 @@ export default function Home() {
                 A random forest classifier is employed for supervised learning, demonstrating that automated, sensor-based life cycle assessment is feasible.
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                The Lamarr project Pal2Sim builds directly on Pal2Rec's findings. While Pal2Rec proved that logistics activities can be reliably 
+                The Lamarr project Pal2Sim builds directly on Pal2Rec&apos;s findings. While Pal2Rec proved that logistics activities can be reliably 
                 detected using sensor data, the high variability of logistical influences—such as vehicle types, loading scenarios, 
                 and process flows—poses significant challenges for creating robust models.
               </p>
