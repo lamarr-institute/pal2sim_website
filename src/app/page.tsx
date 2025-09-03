@@ -16,7 +16,7 @@ export default function Home() {
             />
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Sensor-based activity recognition for pallets in international supply chains using advanced machine learning techniques
+            Sensor-based activity recognition for load carriers in logistics supply chains using machine learning and artificial intelligence
           </p>
         </header>
 
@@ -27,19 +27,16 @@ export default function Home() {
                 Project Overview
               </h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                Pal2Rec is a pioneering research project focused on sensor-based activity recognition for pallets in international supply chains. 
-                Pallets are one of the most important load carriers globally, yet continuously tracking activities such as Driving, Lifting, 
-                or Standing along their life cycle has been nearly impossible until now.
+                There are more than 650 million Euro pallets in circulation in Europe, and around 100 million are produced each year. Despite their industrial significance, data on the location and condition of pallets and the goods they carry is usually only collected sporadically using sensors. Continuously tracking logistical activities such as 'Driving', 'Lifting' or 'Handling' along their life cycle is hardly possible, even though the technical requirements can already be met by smart load carriers. Due to the lack of analysis regarding the process steps, optimization potential by the gain in transparency remains unexploited.
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                This project proposes the first taxonomy for sensor-based activity recognition of pallets, using different types of 
-                acceleration sensors deployed in three logistical scenarios to create a comprehensive benchmark dataset. 
-                A random forest classifier is employed for supervised learning, demonstrating that automated, sensor-based life cycle assessment is feasible.
+                The Pal2Rec research project conducted a feasibility study which showed that logistical activities can be recognized through the use of sensor technology and AI. The first data sets were recorded under laboratory conditions and published as the Sensor-based Pallet Activity Recognition in Logistics (SPARL) data set. In addition, an initial taxonomy of activities was developed.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                While Pal2Rec provided a taxonomy and a first dataset to prove feasibility, the subsequent Lamarr Project Pal2Sim addresses the key challenge of model robustness. The high variability of logistical influences — such as vehicle types, loading scenarios, and process flows — result in a need to have a very large and diverse set of training data. To deal with this and the needed effort of collecting the data, Pal2Sim pursues the approach of generating synthetic sensor data using physical simulation.
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                The Lamarr project Pal2Sim builds directly on Pal2Rec&apos;s findings. While Pal2Rec proved that logistics activities can be reliably 
-                detected using sensor data, the high variability of logistical influences—such as vehicle types, loading scenarios, 
-                and process flows—poses significant challenges for creating robust models.
+                The aim is to examine the extent to which this artificially generated data can close the gap in real data sets and thus enable the comprehensive detection of logistics activities. Real data was recorded in an industrial partner&apos;s warehouse and identical process steps were mapped in the simulation. The data sets created expand the series of SPARL data sets. Pal2Sim&apos;s outcomes aim to enable new approaches to data-driven logistics and process optimization in supply chains.
               </p>
               <div className="flex gap-4">
                 <a 
@@ -103,35 +100,79 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="challenges" className="mb-20">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+              Research Challenges
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+              Interested in our project? Join the challenge with our dataset!
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Challenge 1 */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#009fe3'}}>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold mb-3" style={{color: '#009fe3'}}>
+                  Challenge 1: Can you outperform our classifier?
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Currently a random forest has been used so far to classify the data sets. It is expected that better results can be achieved by adjusting the model or, for example, by using deep learning approaches.
+                </p>
+              </div>
+            </div>
+
+            {/* Challenge 2 */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#973081'}}>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold mb-3" style={{color: '#973081'}}>
+                  Challenge 2: Can you bridge the Sim2Real gap?
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  A comparison of the oscillations of the activity classes of the real and synthetic data in the frequency domain and using various metrics has shown a clear distinction. The objective is to approximate the two data sets.
+                </p>
+              </div>
+            </div>
+
+            {/* Challenge 3 */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#e82e82'}}>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold mb-3" style={{color: '#e82e82'}}>
+                  Challenge 3: Can you develop an automatic annotation tool with computer vision?
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Even though synthetic data may bring a major simplification in the future, real data is still important as ground truth. A computer vision annotation tool is an enabler for using real data as training data more quickly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="datasets" className="mb-20">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
               Research Datasets
             </h2>
             <p className="text-gray-700 dark:text-gray-300 text-center mb-12">
-              Access our comprehensive benchmark datasets used in the Pal2Rec research project
+              All SPARL datasets include Video data, annotated sensor data, and the used classifiers. For follow-up work, please refer to the specified DOI and paper.
             </p>
             
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* SPARL1 Dataset */}
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col h-full">
                   <div className="text-center mb-4">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                       SPARL1 Dataset
                     </h3>
                   </div>
                   
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm flex-grow">
+                    The SPARL1 dataset is the smallest dataset specifically developed for the first analysis of the IMU data. The dataset was especially created to compare the influences of different test subjects and sensors and depicts a simple picking process.
                   </p>
                   
-                  <div className="text-center">
+                  <div className="text-center mt-auto">
                     <a 
                       href="https://zenodo.org/records/11280959" 
                       target="_blank"
@@ -147,23 +188,18 @@ export default function Home() {
                 </div>
 
                 {/* SPARL2 Dataset */}
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col h-full">
                   <div className="text-center mb-4">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                       SPARL2 Dataset
                     </h3>
                   </div>
                   
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm flex-grow">
+                    SPARL2 represents the first comprehensive data set and includes three scenarios from logistics with various sub-steps. The scenarios 'storage and retrieval in the warehouse', 'picking of various goods', and the process chain of 'goods dispatch' were recorded under reproducible laboratory conditions with various sensors and test subjects.
                   </p>
                   
-                  <div className="text-center">
+                  <div className="text-center mt-auto">
                     <a 
                       href="https://zenodo.org/records/13318882" 
                       target="_blank"
@@ -179,23 +215,18 @@ export default function Home() {
                 </div>
 
                 {/* SPARL3 Dataset */}
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col h-full">
                   <div className="text-center mb-4">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                       SPARL3 Dataset
                     </h3>
                   </div>
                   
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm flex-grow">
+                    SPARL3 is the first dataset to contain both real data and synthetic data. In an industrial warehouse, the regular process of goods receipt, storage, retrieval, load securing, and goods dispatch was accompanied in fast motion and carried out with various test subjects.
                   </p>
                   
-                  <div className="text-center">
+                  <div className="text-center mt-auto">
                     <div className="inline-flex items-center bg-gray-400 text-white px-6 py-3 rounded-lg font-medium shadow-md cursor-not-allowed w-full justify-center">
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -247,7 +278,7 @@ export default function Home() {
             </h2>
             <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg p-8 max-w-2xl mx-auto">
               <p className="text-lg text-yellow-800 dark:text-yellow-200 font-medium">
-                📋 To be done
+                Coming soon
               </p>
               <p className="text-yellow-700 dark:text-yellow-300 mt-2">
                 We are currently working on detailed implementation guides and tutorials for using the SPARL dataset.
