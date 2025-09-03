@@ -27,7 +27,7 @@ export default function Home() {
                 Project Overview
               </h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                There are more than 650 million Euro pallets in circulation in Europe, and around 100 million are produced each year. Despite their industrial significance, data on the location and condition of pallets and the goods they carry is usually only collected sporadically using sensors. Continuously tracking logistical activities such as 'Driving', 'Lifting' or 'Handling' along their life cycle is hardly possible, even though the technical requirements can already be met by smart load carriers. Due to the lack of analysis regarding the process steps, optimization potential by the gain in transparency remains unexploited.
+                There are more than 650 million Euro pallets in circulation in Europe, and around 100 million are produced each year. Despite their industrial significance, data on the location and condition of pallets and the goods they carry is usually only collected sporadically using sensors. Continuously tracking logistical activities such as &apos;Driving&apos;, &apos;Lifting&apos; or &apos;Handling&apos; along their life cycle is hardly possible, even though the technical requirements can already be met by smart load carriers. Due to the lack of analysis regarding the process steps, optimization potential by the gain in transparency remains unexploited.
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                 The Pal2Rec research project conducted a feasibility study which showed that logistical activities can be recognized through the use of sensor technology and AI. The first data sets were recorded under laboratory conditions and published as the Sensor-based Pallet Activity Recognition in Logistics (SPARL) data set. In addition, an initial taxonomy of activities was developed.
@@ -196,7 +196,7 @@ export default function Home() {
                   </div>
                   
                   <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm flex-grow">
-                    SPARL2 represents the first comprehensive data set and includes three scenarios from logistics with various sub-steps. The scenarios 'storage and retrieval in the warehouse', 'picking of various goods', and the process chain of 'goods dispatch' were recorded under reproducible laboratory conditions with various sensors and test subjects.
+                    SPARL2 represents the first comprehensive data set and includes three scenarios from logistics with various sub-steps. The scenarios &apos;storage and retrieval in the warehouse&apos;, &apos;picking of various goods&apos;, and the process chain of &apos;goods dispatch&apos; were recorded under reproducible laboratory conditions with various sensors and test subjects.
                   </p>
                   
                   <div className="text-center mt-auto">
