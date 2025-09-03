@@ -101,7 +101,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
                   <div className="relative">
                     <img 
-                      src="/pal2sim_website/timeseries.png" 
+                      src="/pal2sim_website/TimeSeries.png" 
                       alt="Example of time series and corresponding activity recognition" 
                       className="w-full h-48 object-cover rounded-lg mb-3"
                     />
@@ -114,7 +114,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
                   <div className="relative">
                     <img 
-                      src="/pal2sim_website/DSCF1167.jpg" 
+                      src="/pal2sim_website/DSCF1167.JPG" 
                       alt="Developed sensor box for data acquisition" 
                       className="w-full h-48 object-cover rounded-lg mb-3"
                     />
