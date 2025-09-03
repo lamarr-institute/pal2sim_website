@@ -96,6 +96,34 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+                  <div className="relative">
+                    <img 
+                      src="/pal2sim_website/timeseries.png" 
+                      alt="Example of time series and corresponding activity recognition" 
+                      className="w-full h-48 object-cover rounded-lg mb-3"
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Example of a time series and corresponding activity recognition
+                  </p>
+                </div>
+                
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+                  <div className="relative">
+                    <img 
+                      src="/pal2sim_website/DSCF1167.jpg" 
+                      alt="Developed sensor box for data acquisition" 
+                      className="w-full h-48 object-cover rounded-lg mb-3"
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Developed sensor box for data acquisition
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
