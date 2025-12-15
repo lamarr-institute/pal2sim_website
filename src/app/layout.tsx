@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Pal2Rec - Pallet Activity Recognition",
   description: "A scientific research project for sensor-based activity recognition of pallets in international supply chains",
   icons: {
-    icon: "/pal2sim_website/pal2sim_bild.svg",
+    icon: "/pal2sim_bild.svg",
   },
 };
 
