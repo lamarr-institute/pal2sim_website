@@ -96,106 +96,59 @@ function AboutTab() {
           </div>
         </div>
       </section>
-
-      <section>
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
-          Approach for Activity Recognition
-        </h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-          The Pal2Rec research project conducted a feasibility study which showed that logistical activities can be recognized through the use of sensor technology and AI. The first data sets were recorded under laboratory conditions and published as the Sensor-based Pallet Activity Recognition in Logistics (SPARL) data set. In addition, an initial taxonomy of activities was developed.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-          While Pal2Rec provided a taxonomy and a first dataset to prove feasibility, the subsequent Lamarr Project Pal2Sim addresses the key challenge of model robustness. The high variability of logistical influences — such as vehicle types, loading scenarios, and process flows — result in a need to have a very large and diverse set of training data. To deal with this and the needed effort of collecting the data, Pal2Sim pursues the approach of generating synthetic sensor data using physical simulation.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-          The aim is to examine the extent to which this artificially generated data can close the gap in real data sets and thus enable the comprehensive detection of logistics activities. Real data was recorded in an industrial partner&apos;s warehouse and identical process steps were mapped in the simulation. The data sets created expand the series of SPARL data sets. Pal2Sim&apos;s outcomes aim to enable new approaches to data-driven logistics and process optimization in supply chains.
-        </p>
-
-        <div className="space-y-6 mt-8">
-          <div className="text-center mb-4">
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-              From Real Data to Synthetic Simulation
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Bridging the gap between real sensor measurements and simulated environments
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
-              <div className="relative">
-                <img
-                  src="/image_reality.png"
-                  alt="Real pallet sensor data"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-                <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded">
-                  Real Data
-                </span>
-              </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                Actual sensor measurements from pallets in logistics environments
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
-              <div className="relative">
-                <img
-                  src="/image_simulation.png"
-                  alt="Simulated pallet environment"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-                <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
-                  Synthetic Data
-                </span>
-              </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                Computer-generated simulation environments for model training
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 mt-6">
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
-              <div className="relative">
-                <img
-                  src="/TimeSeries.png"
-                  alt="Example of time series and corresponding activity recognition"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-              </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                Example of a time series and corresponding activity recognition
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
-              <div className="relative">
-                <img
-                  src="/DSCF1167.JPG"
-                  alt="Developed sensor box for data acquisition"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-              </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                Developed sensor box for data acquisition
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
-          Our developed Sensorbox
-        </h2>
-      </section>
     </div>
   );
 }
 
 // Datasets Tab Component
 function DatasetsTab() {
+  const datasets = [
+    {
+      name: "SPARL1",
+      link: "https://zenodo.org/records/11280959",
+      linkText: "Zenodo",
+      date: "May 2024",
+      content: "The SPARL1 dataset is the smallest dataset specifically developed for the first analysis of the IMU data. The dataset was especially created to compare the influences of different test subjects and sensors and depicts a simple picking process.",
+      examples: "Coming soon",
+      available: true
+    },
+    {
+      name: "SPARL2",
+      link: "https://zenodo.org/records/13318882",
+      linkText: "Zenodo",
+      date: "August 2024",
+      content: "SPARL2 represents the first comprehensive data set and includes three scenarios from logistics with various sub-steps. The scenarios 'storage and retrieval in the warehouse', 'picking of various goods', and the process chain of 'goods dispatch' were recorded under reproducible laboratory conditions with various sensors and test subjects.",
+      examples: "Coming soon",
+      available: true
+    },
+    {
+      name: "SPARL3",
+      link: null,
+      linkText: "Coming Soon",
+      date: "TBA",
+      content: "SPARL3 is the first dataset to contain both real data and synthetic data. In an industrial warehouse, the regular process of goods receipt, storage, retrieval, load securing, and goods dispatch was accompanied in fast motion and carried out with various test subjects.",
+      examples: "Coming soon",
+      available: false
+    }
+  ];
+
+  const papers = [
+    {
+      title: "Data-driven, sensor-based taxonomy for environmental life cycle assessment of pallets",
+      link: "https://www.researchgate.net/publication/385517860_Data-driven_sensor-based_taxonomy_for_environmental_life_cycle_assessment_of_pallets",
+      linkText: "ResearchGate",
+      date: "October 2024",
+      content: "This contribution is the first to propose a taxonomy for sensor-based activity recognition of pallets. Different types of acceleration sensors are deployed in three logistical scenarios for creating a benchmark dataset. A random forest classifier is deployed for supervised learning. The results demonstrate that automated, sensor-based life cycle assessment based on the proposed taxonomy is feasible."
+    },
+    {
+      title: "Smart Pallets: Towards Event Detection Using IMUs",
+      link: "https://ieeexplore.ieee.org/document/10710674",
+      linkText: "IEEE Xplore",
+      date: "September 2024",
+      content: "This article presents a toolchain for event detection of pallets using IMUs and a novel data set called SPARL. Based on a logistical use case, two sensors are benchmarked in well-defined logistics scenarios. The data set contains the videos of two representative recordings from different perspectives and the raw data of the three used sensors. A random forest time series classification model is deployed for activity recognition."
+    }
+  ];
+
   return (
     <div className="space-y-16">
       <section>
@@ -206,7 +159,8 @@ function DatasetsTab() {
           All SPARL datasets include Video data, annotated sensor data, and the used classifiers. For follow-up work, please refer to the specified DOI and paper.
         </p>
 
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-gray-100 dark:bg-gray-800">
@@ -228,68 +182,84 @@ function DatasetsTab() {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                <td className="p-4 font-medium text-gray-900 dark:text-white">SPARL1</td>
-                <td className="p-4">
-                  <a
-                    href="https://zenodo.org/records/11280959"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                    Zenodo
-                  </a>
-                </td>
-                <td className="p-4 text-gray-700 dark:text-gray-300">May 2024</td>
-                <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">
-                  The SPARL1 dataset is the smallest dataset specifically developed for the first analysis of the IMU data. The dataset was especially created to compare the influences of different test subjects and sensors and depicts a simple picking process.
-                </td>
-                <td className="p-4 text-gray-500 dark:text-gray-400 text-sm italic">Coming soon</td>
-              </tr>
-
-              <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                <td className="p-4 font-medium text-gray-900 dark:text-white">SPARL2</td>
-                <td className="p-4">
-                  <a
-                    href="https://zenodo.org/records/13318882"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                    Zenodo
-                  </a>
-                </td>
-                <td className="p-4 text-gray-700 dark:text-gray-300">August 2024</td>
-                <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">
-                  SPARL2 represents the first comprehensive data set and includes three scenarios from logistics with various sub-steps. The scenarios &apos;storage and retrieval in the warehouse&apos;, &apos;picking of various goods&apos;, and the process chain of &apos;goods dispatch&apos; were recorded under reproducible laboratory conditions with various sensors and test subjects.
-                </td>
-                <td className="p-4 text-gray-500 dark:text-gray-400 text-sm italic">Coming soon</td>
-              </tr>
-
-              <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                <td className="p-4 font-medium text-gray-900 dark:text-white">SPARL3</td>
-                <td className="p-4">
-                  <span className="inline-flex items-center text-gray-400 dark:text-gray-500 font-medium">
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                    </svg>
-                    Coming Soon
-                  </span>
-                </td>
-                <td className="p-4 text-gray-700 dark:text-gray-300">TBA</td>
-                <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">
-                  SPARL3 is the first dataset to contain both real data and synthetic data. In an industrial warehouse, the regular process of goods receipt, storage, retrieval, load securing, and goods dispatch was accompanied in fast motion and carried out with various test subjects.
-                </td>
-                <td className="p-4 text-gray-500 dark:text-gray-400 text-sm italic">Coming soon</td>
-              </tr>
+              {datasets.map((dataset, index) => (
+                <tr key={dataset.name} className={`${index < datasets.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''} hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors`}>
+                  <td className="p-4 font-medium text-gray-900 dark:text-white">{dataset.name}</td>
+                  <td className="p-4">
+                    {dataset.available ? (
+                      <a
+                        href={dataset.link || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
+                      >
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                        {dataset.linkText}
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center text-gray-400 dark:text-gray-500 font-medium">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                        </svg>
+                        {dataset.linkText}
+                      </span>
+                    )}
+                  </td>
+                  <td className="p-4 text-gray-700 dark:text-gray-300">{dataset.date}</td>
+                  <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">{dataset.content}</td>
+                  <td className="p-4 text-gray-500 dark:text-gray-400 text-sm italic">{dataset.examples}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          {datasets.map((dataset) => (
+            <div key={dataset.name} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">{dataset.name}</h3>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{dataset.date}</span>
+              </div>
+
+              <p className="text-gray-700 dark:text-gray-300 text-sm mb-3 leading-relaxed">
+                {dataset.content}
+              </p>
+
+              <div className="flex flex-col gap-2 text-sm">
+                <div className="flex items-center">
+                  <span className="font-semibold text-gray-900 dark:text-white mr-2">Link:</span>
+                  {dataset.available ? (
+                    <a
+                      href={dataset.link || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                    >
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                      {dataset.linkText}
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center text-gray-400 dark:text-gray-500">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                      </svg>
+                      {dataset.linkText}
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center">
+                  <span className="font-semibold text-gray-900 dark:text-white mr-2">Examples:</span>
+                  <span className="text-gray-500 dark:text-gray-400 italic">{dataset.examples}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -298,7 +268,8 @@ function DatasetsTab() {
           Published Papers
         </h2>
 
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-gray-100 dark:bg-gray-800">
@@ -317,55 +288,63 @@ function DatasetsTab() {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                <td className="p-4 font-medium text-gray-900 dark:text-white">
-                  Data-driven, sensor-based taxonomy for environmental life cycle assessment of pallets
-                </td>
-                <td className="p-4">
-                  <a
-                    href="https://www.researchgate.net/publication/385517860_Data-driven_sensor-based_taxonomy_for_environmental_life_cycle_assessment_of_pallets"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                    </svg>
-                    ResearchGate
-                  </a>
-                </td>
-                <td className="p-4 text-gray-700 dark:text-gray-300">October 2024</td>
-                <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">
-                  This contribution is the first to propose a taxonomy for sensor-based activity recognition of pallets. Different types of acceleration sensors are deployed in three logistical scenarios for creating a benchmark dataset. A random forest classifier is deployed for supervised learning. The results demonstrate that automated, sensor-based life cycle assessment based on the proposed taxonomy is feasible.
-                </td>
-              </tr>
-
-              <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                <td className="p-4 font-medium text-gray-900 dark:text-white">
-                  Smart Pallets: Towards Event Detection Using IMUs
-                </td>
-                <td className="p-4">
-                  <a
-                    href="https://ieeexplore.ieee.org/document/10710674"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                    </svg>
-                    IEEE Xplore
-                  </a>
-                </td>
-                <td className="p-4 text-gray-700 dark:text-gray-300">September 2024</td>
-                <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">
-                  This article presents a toolchain for event detection of pallets using IMUs and a novel data set called SPARL. Based on a logistical use case, two sensors are benchmarked in well-defined logistics scenarios. The data set contains the videos of two representative recordings from different perspectives and the raw data of the three used sensors. A random forest time series classification model is deployed for activity recognition.
-                </td>
-              </tr>
+              {papers.map((paper, index) => (
+                <tr key={paper.title} className={`${index < papers.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''} hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors`}>
+                  <td className="p-4 font-medium text-gray-900 dark:text-white">
+                    {paper.title}
+                  </td>
+                  <td className="p-4">
+                    <a
+                      href={paper.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
+                    >
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                        <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                      </svg>
+                      {paper.linkText}
+                    </a>
+                  </td>
+                  <td className="p-4 text-gray-700 dark:text-gray-300">{paper.date}</td>
+                  <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">
+                    {paper.content}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          {papers.map((paper) => (
+            <div key={paper.title} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{paper.title}</h3>
+
+              <div className="flex items-center gap-2 mb-3 text-sm">
+                <span className="text-gray-500 dark:text-gray-400">{paper.date}</span>
+                <span className="text-gray-400">•</span>
+                <a
+                  href={paper.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                >
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                  </svg>
+                  {paper.linkText}
+                </a>
+              </div>
+
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                {paper.content}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
@@ -375,8 +354,9 @@ function DatasetsTab() {
 // Competition Tab Component
 function CompetitionTab() {
   return (
-    <div>
-      <div className="mb-12">
+    <div className="space-y-12">
+      {/* Header Image */}
+      <div className="text-center">
         <img
           src="/cps_iot_week.png"
           alt="CPS IoT Week 2026"
@@ -384,96 +364,145 @@ function CompetitionTab() {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
-        {/* Main Content - Left Side */}
-        <div className="lg:col-span-6 space-y-12">
-          <section>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Are you working in the field of data science? Are you looking for real-world data to work with? Interested in applicable AI? Then you might be interested in our competition. From January until mid-May 2026, we are hosting a competition as part of the <strong>CPS-IoT Week 2026</strong>.
-            </p>
-          </section>
+      {/* Introduction */}
+      <section>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
+          Are you working in the field of data science? Are you looking for real-world data to work with? Interested in applicable AI? Then you might be interested in our competition. From January until mid-May 2026, we are hosting a competition as part of the <strong>CPS-IoT Week 2026</strong>.
+        </p>
+      </section>
 
-          <section>
+      {/* Background & What you work with */}
+      <section>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              The Challenge & Resources Provided
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              The competition is based on the Pal2Sim research project, which investigates how sensor-equipped pallets can improve the monitoring of material flow in warehouses. We developed a custom sensor board that integrates multiple IMU and barometer sensors to record motion data during real warehouse operations.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              By participating in the challenge, you will gain access to annotated datasets generated during our data collection process at a major logistics service provider. These datasets include acitivites such as driving, lowering, lifting a pallet or wrapping. You can view a sample extract of the data <a href="/exampel_data.xlsx" download className="text-blue-600 dark:text-blue-400 hover:underline font-medium">here</a>.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              With these data your task is to develop a classifier that outperforms our baseline deep learning model. The approach you choose is completely up to you.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              <strong>The competition features a total prize pool of €1,000!</strong> The first-place winner will receive €600, second place €300, and third place €100.
-            </p>
-          </section>
-
-          <section>
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Rules & Evaluation
+              Background
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              The full rulebook can be seen <a href="/rulebook.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">here</a>.
+              The competition is based on the Pal2Sim research project, which investigates how sensor-equipped pallets can improve the monitoring of material flow in warehouses. We developed a custom sensor board that integrates multiple IMU and barometer sensors to record motion data during real warehouse operations. Additional information can be found in the &quot;About&quot; section.
             </p>
-          </section>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              What you work with
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+              Teilnehmende der Challenge erhalten Zugang zu folgenden Daten:
+            </p>
+            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2 leading-relaxed">
+              <li>Synchronisierte Beschleunigungs-, Gyroskop- und Barometersignale der aufgenommenen Prozesse. Die Prozesse umfassen bspw. Fahren mit Gabelstapler, Absenken, Anheben oder das Folieren einer Palette</li>
+              <li>Detaillierte Aktivitätsannotationen auf Basis einer definierten Taxonomie</li>
+              <li>Anonymisierte Videoaufnahmen, die zur Erstellung der Annotationen genutzt wurden</li>
+              <li>&quot;Get-Started&quot; Python-Umgebung mit vorbereitetem Code für das Einlesen und Pre-Processing der Daten, damit ihr euch auf die Klassifikation konzentrieren könnt</li>
+              <li>Zugang zum zugehörigen SenSys-2026-Paper, in dem Details zu den Sensoren sowie unserem Single-Labeling-Ansatz beschrieben werden</li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-        {/* Sidebar - Right Side */}
-        <div className="lg:col-span-4 space-y-8">
-          <section>
+      {/* The Challenge */}
+      <section>
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+          The Challenge
+        </h3>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          Das Ziel ist die Entwicklung eines Multi-Labeling-Modells für Supervised Learning, das die Klassifikation der Palettenaktivitäten präziser und robuster löst als unser Single-Labeling-Modell.
+        </p>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Jede methodische Herangehensweise ist erlaubt – klassische Machine-Learning-Verfahren, Deep Learning oder hybride Ansätze –, solange das bereitgestellte Trainingsmaterial als Basis für die Modellentwicklung verwendet wird. Zusätzlich wird der Code zur Verfügung gestellt, mit Hilfe dessen ihr eure Lösung bewerten könnt.
+        </p>
+      </section>
+
+      {/* How the competition will run & Schedule/Prizes */}
+      <section>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Schedule & Deadlines
+              How the competition will run
             </h3>
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b-2 border-gray-300 dark:border-gray-600">
-                    <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
-                      Event
-                    </th>
-                    <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-gray-700 dark:text-gray-300">
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <td className="py-3 pr-4 font-medium">Registration Period</td>
-                    <td className="py-3">January 31 – February 28, 2026</td>
-                  </tr>
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <td className="py-3 pr-4 font-medium">Data Provision</td>
-                    <td className="py-3">March 2, 2026</td>
-                  </tr>
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <td className="py-3 pr-4 font-medium">Submission Deadline</td>
-                    <td className="py-3">April 30, 2026 (EOD)</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 font-medium">Presentation & Results</td>
-                    <td className="py-3">
-                      May 11 – 14, 2026<br />
-                      <span className="text-xs">(During CPS-IoT Week)</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Die Challenge erstreckt sich über zwei Monate (s. Timetable) und bietet Zeit für Datenanalyse, Modellentwicklung und Feintuning. Wenn ihr euch angemeldet habt, erhaltet ihr am 2. März alle genannten Unterlagen und zusätzliche Hinweise zur Bearbeitung.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Für die Ausarbeitung arbeitet ihr in der bereitgestellten Python-Umgebung und entwickelt darin euer Modell. Bei Fragen stehen die Organisatoren im gesamten Bearbeitungszeitraum jederzeit zur Verfügung, um euch bei der Aufgabe zu unterstützen. Antworten auf Fragen werden hierbei immer mit allen Teilnehmenden geteilt, sofern sie für die Bearbeitung der Competition relevant sind.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Eure Ergebnisse werden bis zur Einreichungsfrist am 30. April in einem vorgegebenen Format übermittelt. Auf der CPS-IoT Week treffen wir uns, um über eure verschiedenen Ansätze und Lessons Learned zu sprechen. Die Veranstaltung soll hierbei vor allem auch als Austauschplattform Gleichgesinnter dienen, um sich zum Thema Data Science auszutauschen. Ebenfalls werden in diesem Rahmen selbstverständlich die finalen Gewinner der Competition bekanntgegeben.
+            </p>
+          </div>
+          <div className="space-y-8">
+            {/* Timetable */}
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                Timetable
+              </h3>
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b-2 border-gray-300 dark:border-gray-600">
+                      <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
+                        Event
+                      </th>
+                      <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
+                        Date
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-700 dark:text-gray-300">
+                    <tr className="border-b border-gray-200 dark:border-gray-700">
+                      <td className="py-3 pr-4 font-medium">Anmeldephase</td>
+                      <td className="py-3">31. Januar – 28. Februar 2026</td>
+                    </tr>
+                    <tr className="border-b border-gray-200 dark:border-gray-700">
+                      <td className="py-3 pr-4 font-medium">Datenbereitstellung</td>
+                      <td className="py-3">2. März 2026</td>
+                    </tr>
+                    <tr className="border-b border-gray-200 dark:border-gray-700">
+                      <td className="py-3 pr-4 font-medium">Einreichungsfrist</td>
+                      <td className="py-3">30. April 2026</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-4 font-medium">Präsentation & Ergebnisse</td>
+                      <td className="py-3">
+                        11. – 14. Mai 2026<br />
+                        <span className="text-xs">(CPS-IoT Week)</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </section>
 
-          <section>
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Participate Now
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              If you would like to register, simply send us an email to <a href="mailto:marc.julian.brandt@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">marc.julian.brandt@iml.fraunhofer.de</a> with your information.
-            </p>
-          </section>
+            {/* What's in it for you */}
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                What&apos;s in it for you
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                Neben der Freude an Forschung, dem Ausbau des Netzwerks und dem Prestige, das beste Ergebnis erzielt zu haben, freuen wir uns, den drei bestplatzierten einen Preispool von insgesamt 1.000 € zur Verfügung stellen zu können.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Die Preise sind wie folgt:
+              </p>
+              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 mt-2">
+                <li>1. Platz: 600 €</li>
+                <li>2. Platz: 300 €</li>
+                <li>3. Platz: 100 €</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Participate Now */}
+      <section>
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 text-center">
+          Participate now!
+        </h3>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center max-w-3xl mx-auto">
+          You can either register individually or as a team. Simply send us an email at <a href="mailto:pal2sim-competition@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">pal2sim-competition@iml.fraunhofer.de</a> including your name / team name, team size, email address, university/institute/company.
+        </p>
+      </section>
     </div>
   );
 }
