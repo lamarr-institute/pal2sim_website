@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pal2Rec - Pallet Activity Recognition",
+  title: "Pal2Sim - Pallet Activity Recognition",
   description: "A scientific research project for sensor-based activity recognition of pallets in international supply chains",
   icons: {
-    icon: "/pal2sim_website/pal2sim_bild.svg",
+    icon: "/pal2sim_bild.svg",
   },
 };
 
