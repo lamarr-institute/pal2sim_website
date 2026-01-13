@@ -1,9 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>('about');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // Read tab from URL on mount
+  useEffect(() => {
+    const tabFromUrl = searchParams.get('tab');
+    if (tabFromUrl && ['about', 'datasets', 'competition', 'contact'].includes(tabFromUrl)) {
+      setActiveTab(tabFromUrl);
+    }
+    setIsLoading(false);
+  }, [searchParams]);
+
+  // Update URL when tab changes
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    router.push(`?tab=${tab}`, { scroll: false });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
@@ -38,11 +57,11 @@ export default function Home() {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                style={activeTab === tab.id ? { backgroundColor: '#009EE3' } : {}}
+                onClick={() => handleTabChange(tab.id)}
+                style={!isLoading && activeTab === tab.id ? { backgroundColor: '#009EE3' } : {}}
                 className={`
                   px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold text-xs md:text-sm transition-all duration-200
-                  ${activeTab === tab.id
+                  ${!isLoading && activeTab === tab.id
                     ? 'text-white shadow-lg scale-105'
                     : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:shadow-md border border-gray-200 dark:border-gray-600'}
                 `}
@@ -55,10 +74,16 @@ export default function Home() {
 
         {/* Tab Content */}
         <div className="pb-8">
-          {activeTab === 'about' && <AboutTab />}
-          {activeTab === 'datasets' && <DatasetsTab />}
-          {activeTab === 'competition' && <CompetitionTab setActiveTab={setActiveTab} />}
-          {activeTab === 'contact' && <ContactTab />}
+          {isLoading ? (
+            <div className="min-h-[400px]"></div>
+          ) : (
+            <>
+              {activeTab === 'about' && <AboutTab />}
+              {activeTab === 'datasets' && <DatasetsTab />}
+              {activeTab === 'competition' && <CompetitionTab setActiveTab={handleTabChange} />}
+              {activeTab === 'contact' && <ContactTab />}
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -176,9 +201,6 @@ function DatasetsTab() {
                 <th className="text-left p-4 font-semibold text-gray-900 dark:text-white border-b-2 border-gray-300 dark:border-gray-600">
                   Content
                 </th>
-                <th className="text-left p-4 font-semibold text-gray-900 dark:text-white border-b-2 border-gray-300 dark:border-gray-600">
-                  Examples
-                </th>
               </tr>
             </thead>
             <tbody>
@@ -209,7 +231,6 @@ function DatasetsTab() {
                   </td>
                   <td className="p-4 text-gray-700 dark:text-gray-300">{dataset.date}</td>
                   <td className="p-4 text-gray-700 dark:text-gray-300 text-sm">{dataset.content}</td>
-                  <td className="p-4 text-gray-500 dark:text-gray-400 text-sm italic">{dataset.examples}</td>
                 </tr>
               ))}
             </tbody>
@@ -229,34 +250,28 @@ function DatasetsTab() {
                 {dataset.content}
               </p>
 
-              <div className="flex flex-col gap-2 text-sm">
-                <div className="flex items-center">
-                  <span className="font-semibold text-gray-900 dark:text-white mr-2">Link:</span>
-                  {dataset.available ? (
-                    <a
-                      href={dataset.link || '#'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
-                    >
-                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                      {dataset.linkText}
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center text-gray-400 dark:text-gray-500">
-                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      {dataset.linkText}
-                    </span>
-                  )}
-                </div>
-                <div className="flex items-center">
-                  <span className="font-semibold text-gray-900 dark:text-white mr-2">Examples:</span>
-                  <span className="text-gray-500 dark:text-gray-400 italic">{dataset.examples}</span>
-                </div>
+              <div className="flex items-center text-sm">
+                <span className="font-semibold text-gray-900 dark:text-white mr-2">Link:</span>
+                {dataset.available ? (
+                  <a
+                    href={dataset.link || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                  >
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                    {dataset.linkText}
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center text-gray-400 dark:text-gray-500">
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                    </svg>
+                    {dataset.linkText}
+                  </span>
+                )}
               </div>
             </div>
           ))}
@@ -531,6 +546,33 @@ function ContactTab() {
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
           Contact
         </h2>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 max-w-3xl">
+          The Pal2Sim project was developed at the Fraunhofer Institute for Material Flow and Logistics IML. We are happy to answer any questions you may have about the project, the datasets, or the competition.
+        </p>
+
+        <div className="mb-8">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            For questions regarding the project, please contact:
+          </p>
+
+          <div className="space-y-3">
+            <div className="text-gray-700 dark:text-gray-300">
+              <span className="font-semibold">Marc Julian Brandt</span>
+              <br />
+              <a href="mailto:marc.julian.brandt@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline">
+                marc.julian.brandt@iml.fraunhofer.de
+              </a>
+            </div>
+
+            <div className="text-gray-700 dark:text-gray-300">
+              <span className="font-semibold">Alexander Krooß</span>
+              <br />
+              <a href="mailto:alexander.krooss@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline">
+                alexander.krooss@iml.fraunhofer.de
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
