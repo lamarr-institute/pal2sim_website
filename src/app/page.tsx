@@ -371,138 +371,154 @@ function CompetitionTab() {
         </p>
       </section>
 
-      {/* Background & What you work with */}
-      <section>
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div>
+      {/* Main Content Grid - Desktop 2 columns, Mobile stacked */}
+      <div className="grid md:grid-cols-2 gap-8 items-start">
+        {/* Left Column */}
+        <div className="space-y-8">
+          {/* Background */}
+          <section>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               Background
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               The competition is based on the Pal2Sim research project, which investigates how sensor-equipped pallets can improve the monitoring of material flow in warehouses. We developed a custom sensor board that integrates multiple IMU and barometer sensors to record motion data during real warehouse operations. Additional information can be found in the &quot;About&quot; section.
             </p>
-          </div>
-          <div>
+            <img
+              src="/sensor.jpg"
+              alt="Our sensorbox in action, mounted to a pallet"
+              className="w-full rounded-lg"
+            />
+            <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
+              Our sensorbox in action, mounted to a pallet
+            </p>
+          </section>
+
+          {/* What you work with */}
+          <section>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               What you work with
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-              Teilnehmende der Challenge erhalten Zugang zu folgenden Daten:
+              Participants in the challenge will receive access to the following data:
             </p>
             <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2 leading-relaxed">
-              <li>Synchronisierte Beschleunigungs-, Gyroskop- und Barometersignale der aufgenommenen Prozesse. Die Prozesse umfassen bspw. Fahren mit Gabelstapler, Absenken, Anheben oder das Folieren einer Palette</li>
-              <li>Detaillierte Aktivitätsannotationen auf Basis einer definierten Taxonomie</li>
-              <li>Anonymisierte Videoaufnahmen, die zur Erstellung der Annotationen genutzt wurden</li>
-              <li>&quot;Get-Started&quot; Python-Umgebung mit vorbereitetem Code für das Einlesen und Pre-Processing der Daten, damit ihr euch auf die Klassifikation konzentrieren könnt</li>
-              <li>Zugang zum zugehörigen SenSys-2026-Paper, in dem Details zu den Sensoren sowie unserem Single-Labeling-Ansatz beschrieben werden</li>
+              <li>Synchronized accelerometer, gyroscope, and barometer signals recorded during real warehouse processes. These processes include, for example, forklift driving, lowering, lifting, or wrapping a pallet.</li>
+              <li>Detailed activity annotations based on a defined taxonomy.</li>
+              <li>Anonymized video recordings used to create the annotations.</li>
+              <li>A &quot;get-started&quot; Python environment with prepared code for data loading and pre-processing, allowing you to focus directly on classification.</li>
+              <li>Access to the accompanying SenSys 2026 paper, which describes details of the sensors as well as our single-labeling approach.</li>
             </ul>
-          </div>
-        </div>
-      </section>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+              To give you an idea of how the annotated dataset looks like, you can download an example <a href="/pal2sim_example_data.csv" download className="text-blue-600 dark:text-blue-400 hover:underline font-medium">here</a>.
+            </p>
+          </section>
 
-      {/* The Challenge */}
-      <section>
-        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-          The Challenge
-        </h3>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-          Das Ziel ist die Entwicklung eines Multi-Labeling-Modells für Supervised Learning, das die Klassifikation der Palettenaktivitäten präziser und robuster löst als unser Single-Labeling-Modell.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Jede methodische Herangehensweise ist erlaubt – klassische Machine-Learning-Verfahren, Deep Learning oder hybride Ansätze –, solange das bereitgestellte Trainingsmaterial als Basis für die Modellentwicklung verwendet wird. Zusätzlich wird der Code zur Verfügung gestellt, mit Hilfe dessen ihr eure Lösung bewerten könnt.
-        </p>
-      </section>
-
-      {/* How the competition will run & Schedule/Prizes */}
-      <section>
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div>
+          {/* How the competition will run */}
+          <section>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               How the competition will run
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Die Challenge erstreckt sich über zwei Monate (s. Timetable) und bietet Zeit für Datenanalyse, Modellentwicklung und Feintuning. Wenn ihr euch angemeldet habt, erhaltet ihr am 2. März alle genannten Unterlagen und zusätzliche Hinweise zur Bearbeitung.
+              The challenge runs for two months (see timetable) and offers sufficient time for data analysis, model development, and fine-tuning. After registering, you will receive all mentioned materials and additional guidance on March 2.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Für die Ausarbeitung arbeitet ihr in der bereitgestellten Python-Umgebung und entwickelt darin euer Modell. Bei Fragen stehen die Organisatoren im gesamten Bearbeitungszeitraum jederzeit zur Verfügung, um euch bei der Aufgabe zu unterstützen. Antworten auf Fragen werden hierbei immer mit allen Teilnehmenden geteilt, sofern sie für die Bearbeitung der Competition relevant sind.
+              You will work within the provided Python environment and develop your model there. The organizers will be available throughout the entire period to support you. Answers to questions will be shared with all participants whenever they are relevant to the competition.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Your results must be submitted in the specified format by the deadline on April 30. During CPS-IoT Week, we will meet to discuss your approaches and lessons learned. The event also serves as a platform for exchange among data science enthusiasts. The final winners of the competition will be announced during this session.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Eure Ergebnisse werden bis zur Einreichungsfrist am 30. April in einem vorgegebenen Format übermittelt. Auf der CPS-IoT Week treffen wir uns, um über eure verschiedenen Ansätze und Lessons Learned zu sprechen. Die Veranstaltung soll hierbei vor allem auch als Austauschplattform Gleichgesinnter dienen, um sich zum Thema Data Science auszutauschen. Ebenfalls werden in diesem Rahmen selbstverständlich die finalen Gewinner der Competition bekanntgegeben.
+              The full rulebook for the competition can be found <a href="/rulebook.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">here</a>.
             </p>
-          </div>
-          <div className="space-y-8">
-            {/* Timetable */}
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                Timetable
-              </h3>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b-2 border-gray-300 dark:border-gray-600">
-                      <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
-                        Event
-                      </th>
-                      <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-700 dark:text-gray-300">
-                    <tr className="border-b border-gray-200 dark:border-gray-700">
-                      <td className="py-3 pr-4 font-medium">Anmeldephase</td>
-                      <td className="py-3">31. Januar – 28. Februar 2026</td>
-                    </tr>
-                    <tr className="border-b border-gray-200 dark:border-gray-700">
-                      <td className="py-3 pr-4 font-medium">Datenbereitstellung</td>
-                      <td className="py-3">2. März 2026</td>
-                    </tr>
-                    <tr className="border-b border-gray-200 dark:border-gray-700">
-                      <td className="py-3 pr-4 font-medium">Einreichungsfrist</td>
-                      <td className="py-3">30. April 2026</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 pr-4 font-medium">Präsentation & Ergebnisse</td>
-                      <td className="py-3">
-                        11. – 14. Mai 2026<br />
-                        <span className="text-xs">(CPS-IoT Week)</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* What's in it for you */}
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                What&apos;s in it for you
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-                Neben der Freude an Forschung, dem Ausbau des Netzwerks und dem Prestige, das beste Ergebnis erzielt zu haben, freuen wir uns, den drei bestplatzierten einen Preispool von insgesamt 1.000 € zur Verfügung stellen zu können.
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Die Preise sind wie folgt:
-              </p>
-              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 mt-2">
-                <li>1. Platz: 600 €</li>
-                <li>2. Platz: 300 €</li>
-                <li>3. Platz: 100 €</li>
-              </ul>
-            </div>
-          </div>
+          </section>
         </div>
-      </section>
 
-      {/* Participate Now */}
-      <section>
-        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 text-center">
-          Participate now!
-        </h3>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center max-w-3xl mx-auto">
-          You can either register individually or as a team. Simply send us an email at <a href="mailto:pal2sim-competition@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">pal2sim-competition@iml.fraunhofer.de</a> including your name / team name, team size, email address, university/institute/company.
-        </p>
-      </section>
+        {/* Right Column */}
+        <div className="space-y-8">
+          {/* The Challenge */}
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              The Challenge
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Your goal is to develop a multi-label supervised learning model that classifies pallet activities more precisely and robustly than our current single-label model.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Any methodological approach is allowed—classical machine learning, deep learning, or hybrid solutions—as long as the provided training data serves as the basis for model development. In addition, we provide the code you need to evaluate your solution.
+            </p>
+          </section>
+
+          {/* Timetable */}
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Timetable
+            </h3>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b-2 border-gray-300 dark:border-gray-600">
+                    <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
+                      Event
+                    </th>
+                    <th className="text-left py-2 font-semibold text-gray-900 dark:text-white">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-700 dark:text-gray-300">
+                  <tr className="border-b border-gray-200 dark:border-gray-700">
+                    <td className="py-3 pr-4 font-medium">Registration Phase</td>
+                    <td className="py-3">January 31 – February 28, 2026</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 dark:border-gray-700">
+                    <td className="py-3 pr-4 font-medium">Data Release</td>
+                    <td className="py-3">March 2, 2026</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 dark:border-gray-700">
+                    <td className="py-3 pr-4 font-medium">Submission Deadline</td>
+                    <td className="py-3">April 30, 2026</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-4 font-medium">Presentation & Results</td>
+                    <td className="py-3">
+                      May 11 – 14, 2026<br />
+                      <span className="text-xs">(CPS-IoT Week)</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* What's in it for you */}
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              What&apos;s in it for you
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+              Beyond the joy of research, the opportunity to broaden your network, and the prestige of achieving top results, we are excited to offer a total prize pool of €1,000 for the three highest-ranked participants.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              The prizes are as follows:
+            </p>
+            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 mt-2">
+              <li>1st place: €600</li>
+              <li>2nd place: €300</li>
+              <li>3rd place: €100</li>
+            </ul>
+          </section>
+
+          {/* Participate Now */}
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Participate now!
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              You can either register individually or as a team. Simply send us an email at <a href="mailto:pal2sim-competition@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">pal2sim-competition@iml.fraunhofer.de</a> including your name / team name, team size, email address, university/institute/company.
+            </p>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }
