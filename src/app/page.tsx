@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-export default function Home() {
+function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>('about');
@@ -87,6 +87,37 @@ export default function Home() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-6 md:px-12 py-8">
+          <header className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 md:gap-6 mb-6">
+              <img
+                src="/pal2sim_logo.svg"
+                alt="Pal2Rec Logo"
+                className="h-12 md:h-16 w-auto"
+              />
+              <img
+                src="/lamarr_logo.png"
+                alt="Lamarr Institute Logo"
+                className="h-12 md:h-16 w-auto"
+              />
+            </div>
+            <p className="text-base md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
+              Sensor-based activity recognition for load carriers in logistics supply chains using machine learning and artificial intelligence
+            </p>
+          </header>
+          <div className="min-h-[400px]"></div>
+        </div>
+      </div>
+    }>
+      <HomeContent />
+    </Suspense>
   );
 }
 
