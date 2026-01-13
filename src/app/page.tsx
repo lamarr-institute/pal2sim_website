@@ -541,17 +541,9 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               What&apos;s in it for you
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-              Beyond the joy of research, the opportunity to broaden your network, and the prestige of achieving top results, we are excited to offer a total prize pool of <strong>€1,000</strong> for the three highest-ranked participants.
-            </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              The prizes are as follows:
+              Beyond the joy of research, the opportunity to broaden your network, and the prestige of achieving top results, we are working on securing prizes for the highest-ranked participants. Details will be announced in the coming weeks - stay tuned!
             </p>
-            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 mt-2">
-              <li>1st place: €600</li>
-              <li>2nd place: €300</li>
-              <li>3rd place: €100</li>
-            </ul>
           </section>
 
           {/* Participate Now */}
