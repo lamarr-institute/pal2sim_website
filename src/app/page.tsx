@@ -57,7 +57,7 @@ export default function Home() {
         <div className="pb-8">
           {activeTab === 'about' && <AboutTab />}
           {activeTab === 'datasets' && <DatasetsTab />}
-          {activeTab === 'competition' && <CompetitionTab />}
+          {activeTab === 'competition' && <CompetitionTab setActiveTab={setActiveTab} />}
           {activeTab === 'contact' && <ContactTab />}
         </div>
       </div>
@@ -352,7 +352,7 @@ function DatasetsTab() {
 }
 
 // Competition Tab Component
-function CompetitionTab() {
+function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
   return (
     <div className="space-y-12">
       {/* Header Image */}
@@ -381,7 +381,7 @@ function CompetitionTab() {
               Background
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              The competition is based on the Pal2Sim research project, which investigates how sensor-equipped pallets can improve the monitoring of material flow in warehouses. We developed a custom sensor board that integrates multiple IMU and barometer sensors to record motion data during real warehouse operations. Additional information can be found in the &quot;About&quot; section.
+              The competition is based on the <strong>Pal2Sim research project</strong>, which investigates how sensor-equipped pallets can improve the monitoring of material flow in warehouses. We developed a custom sensor board that integrates multiple IMU and barometer sensors to record motion data during real warehouse operations. Additional information can be found in the <button onClick={() => setActiveTab('about')} className="text-blue-600 dark:text-blue-400 hover:underline font-medium cursor-pointer">&quot;About&quot;</button> section.
             </p>
             <img
               src="/sensor.jpg"
@@ -419,15 +419,15 @@ function CompetitionTab() {
               How the competition will run
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              The challenge runs for two months (see timetable) and offers sufficient time for data analysis, model development, and fine-tuning. After registering, you will receive all mentioned materials and additional guidance on March 2.
+              The challenge runs for <strong>two months</strong> (see timetable) and offers sufficient time for data analysis, model development, and fine-tuning. After registering, you will receive all mentioned materials and additional guidance on <strong>March 2</strong>.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               You will work within the provided Python environment and develop your model there. The organizers will be available throughout the entire period to support you. Answers to questions will be shared with all participants whenever they are relevant to the competition.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Your results must be submitted in the specified format by the deadline on April 30. During CPS-IoT Week, we will meet to discuss your approaches and lessons learned. The event also serves as a platform for exchange among data science enthusiasts. The final winners of the competition will be announced during this session.
+              Your results must be submitted in the specified format by the deadline on <strong>April 30</strong>. During CPS-IoT Week, we will meet to discuss your approaches and lessons learned. The event also serves as a platform for exchange among data science enthusiasts. The final winners of the competition will be announced during this session.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-semibold">
               The full rulebook for the competition can be found <a href="/rulebook.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">here</a>.
             </p>
           </section>
@@ -441,10 +441,10 @@ function CompetitionTab() {
               The Challenge
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Your goal is to develop a multi-label supervised learning model that classifies pallet activities more precisely and robustly than our current single-label model.
+              Your goal is to develop a <strong>multi-label supervised learning model</strong> that classifies pallet activities more precisely and robustly than our current single-label model.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Any methodological approach is allowed—classical machine learning, deep learning, or hybrid solutions—as long as the provided training data serves as the basis for model development. In addition, we provide the code you need to evaluate your solution.
+              Any methodological approach is allowed - classical machine learning, deep learning, or hybrid solutions - as long as the provided training data serves as the basis for model development. In addition, we provide the code you need to evaluate your solution.
             </p>
           </section>
 
@@ -496,7 +496,7 @@ function CompetitionTab() {
               What&apos;s in it for you
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-              Beyond the joy of research, the opportunity to broaden your network, and the prestige of achieving top results, we are excited to offer a total prize pool of €1,000 for the three highest-ranked participants.
+              Beyond the joy of research, the opportunity to broaden your network, and the prestige of achieving top results, we are excited to offer a total prize pool of <strong>€1,000</strong> for the three highest-ranked participants.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               The prizes are as follows:
