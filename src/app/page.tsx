@@ -454,9 +454,6 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
               <li>A &quot;get-started&quot; Python environment with prepared code for data loading and pre-processing, allowing you to focus directly on classification.</li>
               <li>Access to the accompanying SenSys 2026 paper, which describes details of the sensors as well as our single-labeling approach.</li>
             </ul>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
-              To give you an idea of how the annotated dataset looks like, you can download an example <a href="/pal2sim_example_data.csv" download className="text-blue-600 dark:text-blue-400 hover:underline font-medium">here</a>.
-            </p>
           </section>
 
           {/* How the competition will run */}
@@ -513,7 +510,7 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
                 </thead>
                 <tbody className="text-gray-700 dark:text-gray-300">
                   <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <td className="py-3 pr-4 font-medium">Registration Phase</td>
+                    <td className="py-3 pr-4 font-medium">Registration Phase*</td>
                     <td className="py-3">January 31 – February 28, 2026</td>
                   </tr>
                   <tr className="border-b border-gray-200 dark:border-gray-700">
@@ -533,6 +530,9 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
                   </tr>
                 </tbody>
               </table>
+              <p className="text-xs text-gray-600 dark:text-gray-400 mt-3 italic">
+                * Late registration is possible. Please consider that this will result in less time available for working on the challenge.
+              </p>
             </div>
           </section>
 
@@ -553,6 +553,16 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               You can either register individually or as a team. Simply send us an email at <a href="mailto:pal2sim-competition@iml.fraunhofer.de" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">pal2sim-competition@iml.fraunhofer.de</a> including your name / team name, team size, email address, university/institute/company.
+            </p>
+          </section>
+
+          {/* Got any questions */}
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Got any questions?
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              If you have any questions beforehand, you can also send us a message at the email address mentioned above. We will try to answer all your questions as quickly as possible.
             </p>
           </section>
         </div>
