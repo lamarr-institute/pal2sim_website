@@ -126,29 +126,61 @@ function AboutTab() {
   return (
     <div className="space-y-16">
       <section>
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
-          Project Background
-        </h2>
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              There are more than 650 million Euro pallets in circulation in Europe, and around 100 million are produced each year. Despite their industrial significance, data on the location and condition of pallets and the goods they carry is usually only collected sporadically using sensors. Continuously tracking logistical activities such as &apos;Driving&apos;, &apos;Lifting&apos; or &apos;Handling&apos; along their life cycle is hardly possible, even though the technical requirements can already be met by smart load carriers. Due to the lack of analysis regarding the process steps, optimization potential by the gain in transparency remains unexploited.
-            </p>
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+                Background
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                There are more than 650 million Euro pallets in circulation in Europe, and around 100 million are produced each year. Despite their industrial significance, data on the location and condition of pallets and the goods they carry is usually only collected sporadically using sensors. Continuously tracking logistical activities such as &apos;Driving&apos;, &apos;Lifting&apos; or &apos;Handling&apos; along their life cycle is hardly possible, even though the technical requirements can already be met by smart load carriers. Due to the lack of analysis regarding the process steps, optimization potential by the gain in transparency remains unexploited.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+                The Pal2Sim Project
+              </h2>
+              <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p>
+                  The Pal2Sim project addresses this challenge by exploring how sensor systems mounted on load carriers, with a focus on pallets, can be used to generate motion data and predict specific logistical activities such as storage, retrieval, wrapping, and transportation.
+                </p>
+                <p>
+                  To achieve this, we have developed a dedicated sensor board that allows simultaneous recording of data from multiple sensors and can be mounted directly on a Euro pallet. The board includes three accelerometers, three gyroscopes, and two barometric sensors, enabling the high-frequency collection of process data over several hours. The sensor board can be inserted and fixed between the deck boards on the side of a pallet. It does not require any additional infrastructure for data acquisition and can be mounted even on loaded pallets.
+                </p>
+                <p>
+                  Our current research focuses on developing artificial intelligence models capable of inferring specific logistical activities from the recorded sensor data. For this purpose, we conduct measurements in both laboratory settings and industrial environments. The resulting datasets are used to train and validate classification models, providing a basis for automated activity recognition and process optimization in logistics.
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full rounded-lg"
-            >
-              <source src="/pal2sim_webm.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-            <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
-              Example of operative warehouse activities and its prediction by sensors
-            </p>
+
+          <div className="space-y-6">
+            <div>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full rounded-lg"
+              >
+                <source src="/pal2sim_webm.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
+                Example of operative warehouse activities and its prediction by sensors
+              </p>
+            </div>
+            <div>
+              <img
+                src="/team_photo.jpg"
+                alt="Our sensorboard"
+                className="w-full rounded-lg"
+              />
+              <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
+                Our sensorboard
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -431,11 +463,11 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
             </p>
             <img
               src="/sensor.jpg"
-              alt="Our sensorbox in action, mounted to a pallet"
+              alt="Our sensorboard in action, mounted to a pallet"
               className="w-full rounded-lg"
             />
             <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
-              Our sensorbox in action, mounted to a pallet
+              Our sensorboard in action, mounted to a pallet
             </p>
           </section>
 
@@ -452,7 +484,7 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
               <li>Detailed activity annotations based on a defined taxonomy.</li>
               <li>Anonymized video recordings used to create the annotations.</li>
               <li>A &quot;get-started&quot; Python environment with prepared code for data loading and pre-processing, allowing you to focus directly on classification.</li>
-              <li>Access to the accompanying SenSys 2026 paper, which describes details of the sensors as well as our single-labeling approach.</li>
+              <li>Access to a more detailed description of the sensors used as well as our single-labeling approach.</li>
             </ul>
           </section>
 
