@@ -52,7 +52,7 @@ function HomeContent() {
             {[
               { id: 'about', label: 'About Pal2Sim' },
               { id: 'datasets', label: 'Published Datasets & Papers' },
-              { id: 'competition', label: '🏆 CPS IoT Competition 26\'' },
+              { id: 'competition', label: '🏆 CPS IoT Competition 26\' (finished)' },
               { id: 'contact', label: 'Contact' }
             ].map((tab) => (
               <button
@@ -431,8 +431,76 @@ function DatasetsTab() {
 
 // Competition Tab Component
 function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
+  const [lightbox, setLightbox] = useState<{ src: string; name: string } | null>(null);
+
   return (
     <div className="space-y-12">
+      {/* Competition Finished Banner */}
+      <div className="mx-auto max-w-4xl bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border border-green-300 dark:border-green-600 rounded-xl px-6 py-5 shadow-sm">
+        <div className="flex items-start gap-3">
+          <span className="text-2xl mt-0.5">🏆</span>
+          <div className="text-left">
+            <p className="font-bold text-green-800 dark:text-green-300 text-lg leading-snug">
+              The CPS IoT Competition 2026 has been successfully completed!
+            </p>
+            <p className="text-green-700 dark:text-green-400 mt-3 text-sm md:text-base">
+              This competition was held as part of <a href="https://cps-iot-week2026.inria.fr/" target="_blank" rel="noopener noreferrer" className="underline font-medium">CPS-IoT Week 2026</a>, the premier event on Cyber-Physical Systems and the Internet of Things, bringing together top conferences including{' '}
+              <a href="https://hscc.acm.org/2026/" target="_blank" rel="noopener noreferrer" className="underline font-medium">HSCC/ICCPS</a>,{' '}
+              <a href="https://sensys.acm.org/2026/" target="_blank" rel="noopener noreferrer" className="underline font-medium">SenSys</a>, and{' '}
+              <a href="https://2026.rtas.org/" target="_blank" rel="noopener noreferrer" className="underline font-medium">RTAS</a>.
+            </p>
+            <p className="text-green-700 dark:text-green-400 mt-3 text-sm md:text-base">
+              A total of 14 teams from 6 countries and 46 participants took part in this year&apos;s challenge. We are thrilled by the interest and engagement from the community. After two months of dedicated work, Team HAI distinguished themselves with their outstanding model and claimed the winning title. Their approach involved converting time-series data into a tabular format, extracting features across different frequency domains, and training an ensemble of state-of-the-art models, achieving an MCC score of 87.97.
+            </p>
+            <p className="text-green-700 dark:text-green-400 mt-3 text-sm md:text-base">
+              We sincerely thank all participants for their contributions and enthusiasm and look forward to future competitions.
+            </p>
+            <div className="mt-3 pt-3 border-t border-green-200 dark:border-green-700">
+              <p className="font-semibold text-green-800 dark:text-green-300 text-sm md:text-base">
+                Winner: Team HAI
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mt-4">
+                {[
+                  { file: 'Rui_Feng.jpg', name: 'Rui Feng', affil: '1' },
+                  { file: 'Yize_Cai.jpg', name: 'Yize Cai', affil: '1' },
+                  { file: 'Lidan_Cao.jpg', name: 'Lidan Cao', affil: '1' },
+                  { file: 'Baoshen_Guo.jpg', name: 'Baoshen Guo', affil: '2' },
+                  { file: 'Zhiqing_Hong.jpg', name: 'Zhiqing Hong', affil: '1' },
+                ].map((member) => (
+                  <div key={member.file} className="flex flex-col items-center gap-1 w-24 md:w-28">
+                    <button onClick={() => setLightbox({ src: `/${member.file}`, name: member.name })} className="focus:outline-none">
+                      <img
+                        src={`/${member.file}`}
+                        alt={member.name}
+                        className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-green-300 dark:border-green-600 shadow cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    </button>
+                    <p className="text-xs text-green-700 dark:text-green-400 text-center leading-tight">
+                      {member.name}<sup>{member.affil}</sup>
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-green-600 dark:text-green-500 text-xs mt-3 leading-relaxed">
+                <sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)<br />
+                <sup>2</sup> Singapore-MIT Alliance for Research and Technology
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center">
+        <p className="text-sm text-gray-400 dark:text-gray-500 inline-flex flex-col items-center gap-1">
+          <span>Details on the past competition below</span>
+          <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </p>
+      </div>
+
+      <hr className="border-t border-gray-200 dark:border-gray-700 max-w-4xl mx-auto" />
+
       {/* Header Image */}
       <div className="text-center">
         <img
@@ -599,6 +667,32 @@ function CompetitionTab({ setActiveTab }: { setActiveTab: (tab: string) => void 
           </section>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          onClick={() => setLightbox(null)}
+        >
+          <div className="relative max-w-lg w-full mx-4" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors text-sm flex items-center gap-1"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              Close
+            </button>
+            <img
+              src={lightbox.src}
+              alt={lightbox.name}
+              className="w-full rounded-xl shadow-2xl"
+            />
+            <p className="text-center text-white mt-3 font-medium">{lightbox.name}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
